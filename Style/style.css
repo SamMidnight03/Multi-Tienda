@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Header*/
+
+header nav{
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 30px;
+    background-color: #78adba;
+}
+
+nav img{
+    height: 70px;
+}
+
+body{
+    background: #b7b7b7;
+}
+
+#ProductosContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+#tarjeta {
+    background: #fff;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.Producto{
+    box-sizing: border-box;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    padding: 32px;
+    position: relative;
+    z-index: -2;
+}
+
+.info {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
+    font-size: 0.6rem;
+    border-radius: 0 0 30px 30px;
+    padding: 20px;
+}   
+
+.info:hover{
+    opacity: 1;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.863));
+}
+
+/*Modal*/
+
+#modal{
+    z-index: 10 ;
+    display: none;
+}
+
+/*
+Cuando el contenedor de los productos contenga un modal visible las tarjetas no se podran interactuar
+*/
+#ProductosContainer:has(#modal.visto) #tarjeta {
+    pointer-events: none;
+}
+
+#modal.visto{
+    position: fixed;
+    display:flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+
+    padding: 10px;
+
+    max-width: 600px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background-color: #ffffff;
+    box-shadow: 0px 0px 150px 82px #202020c6;
+}
+
+.visto img{
+    width: 13%;
+    height: 13%;
+    cursor: pointer;
+}
+
+/*Info del modal*/
+
+.informacion{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+#eimg{
+    width: 40%;
+    height: 40%;
+    object-fit: contain;
+}
+
+#close{
+    position: relative;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    left: calc(100% - 40px);
+}
