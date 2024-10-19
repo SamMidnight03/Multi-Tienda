@@ -33,7 +33,7 @@ function tarjetas({id, title, description, image, price, category, rating}){
         console.log(titulo)
         titulomodal.innerText = title
         informacion.innerText = description
-        precio.innerText = price
+        precio.innerText = `$ ${price}`
         categoria.innerText = `-${category}`
         imagem.src= image 
     })
